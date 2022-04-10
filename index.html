@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Premark-Helper</title>
+    <link rel="shortcut icon" href="/img/marker.png" type="image/x-icon"> 
+    <style> 
+        body{text-align:center} 
+    </style>
+	<script src="calculate.js">calculate.js</script>
+</head>
+
+<body style="background-color:bisque">
+	
+
+    <h1>Welcome to EBL Premark Helper</h1>
+    <a>
+        <img src="/img/area.png" height="300" alt="Premark">
+    </a>
+    
+	<form action="" method="post" name="myform" id="myform">
+		<div class="wrapper" id="_wrapper">
+            <h3>请选择一个象限</h3>    
+            
+            <input type="radio" name="count" id="" value="1"/>第1象限
+			<input type="radio" name="count" id="" value="2"/>第2象限
+			<input type="radio" name="count" id="" value="3"/>第3象限
+			<input type="radio" name="count" id="" value="4"/>第4象限
+            
+			<h3>请输入相对坐标</h3> 
+			X相对坐标(绝对值）：<input type="text" name="number1" id="number1" autocomplete="off"/>
+
+			Y相对坐标(绝对值）：<input type="text" name="number2" id="number2" autocomplete="off"/><br><br>	
+			
+			<input type="button" value="Submit" id="" onclick="jisuan()"/>
+			<input type="reset" value="Reset" id="" /><br><br>
+			<h3>计算结果</h3> 
+			坐标X：<input name="txtResult" type="text" id="txtResult" autocomplete="off"/>
+            坐标Y：<input name="txtResult2" type="text" id="txtResult2" autocomplete="off"/>
+			
+		</div>
+	</form>
+
+	<!-- <script>
+		
+		var str;
+		var num1 = 0;
+		var num2 = 0;	
+			
+		//点击事件	//document.form的name值.input的name值.value
+		function jisuan(){
+			str = document.getElementsByName('count');
+			num1 = parseFloat(document.myform.number1.value);
+			num2 = parseFloat(document.myform.number2.value);
+			//判断文本框是否为空
+			//注意此处文本框获取值时使用了parseFloat转换，所以当文本框为空时是NaN，并不是""和null，所以需要用到isNaN来判断。
+			if(isNaN(num1) && isNaN(num2)){
+				alert("请填写数据！");
+			}
+			else if(isNaN(num1)){
+				alert("请填写操作数X！");
+			}
+			else if(isNaN(num2)){
+				alert("请填写操作数Y！");
+			}
+			else{
+				danxuankuang();
+			}
+			
+			if(str[0].checked == true){
+				document.myform.txtResult.value=-70+num1;
+                document.myform.txtResult2.value=-70+num2;
+			}
+			if(str[1].checked == true){
+				document.myform.txtResult.value=-80+num1;
+                document.myform.txtResult2.value=-70+num2;
+			}
+			if(str[2].checked == true){
+				document.myform.txtResult.value=-80+num1;
+                document.myform.txtResult2.value=-80+num2;
+			}
+			if(str[3].checked == true){
+				document.myform.txtResult.value=-70+num1;
+                document.myform.txtResult2.value=-80+num2;
+			}		
+		}
+		
+		//判断单选框是否选中
+		function danxuankuang(){
+			var a=5;//定义第三方变量，设定一个不在单选框值之内的值
+			for(var i=0;i < str.length; i ++){
+				if(str[i].checked == true){
+					a=i;
+					return a;
+				}						
+			}	
+			if(a==0 || a==1 || a==2 || a==3){
+				
+			}else{
+				alert("请先选择二维材料所在象限！");
+			}		
+		}	
+		
+	</script> -->
+</body>
+</html>
